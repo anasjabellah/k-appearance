@@ -125,7 +125,7 @@
                 <li class="menu-item">
                     <a href="{{ url('/Contect') }}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-collection"></i>
-                        <div data-i18n="Basic">Contect</div>
+                        <div data-i18n="Basic">Contact</div>
                     </a>
                 </li>
 
@@ -282,7 +282,9 @@
                     </tbody>
                   </table>
 
-                  {!! $categories->links() !!}
+                  <div>
+                  {!! $categories->links() !!}        
+                  </div>
                    
 
 @endsection

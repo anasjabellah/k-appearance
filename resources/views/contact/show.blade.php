@@ -1,7 +1,7 @@
-@extends('categories.layout')
+@extends('contact.layout')
 @section('content')
-
- <div class="layout-wrapper layout-content-navbar">
+<!-- Layout wrapper -->
+<div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
 
         <!-- Menu -->
@@ -86,25 +86,6 @@
             <!-- Components -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Managment</span></li>
                 <!-- Cards -->
-                <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-copy"></i>
-                        <div data-i18n="Extended UI">Product </div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                        <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                            <div data-i18n="Perfect Scrollbar">Men</div>
-                        </a>
-                        </li>
-                        <li class="menu-item">
-                        <a href="extended-ui-text-divider.html" class="menu-link">
-                            <div data-i18n="Text Divider">Women</div>
-                        </a>
-                        </li>
-                    </ul>
-                </li>
-
                 <!-- Extended components -->
                 <li class="menu-item">
                     <a href="{{ url('/Category') }}" class="menu-link">
@@ -117,7 +98,7 @@
                 <!-- Extended components -->
                 <li class="menu-item">
                     <a href="{{ url('/Orders') }}" class="menu-link">
-                    <i class='menu-icon tf-icons bx bx-cart'></i>
+                        <i class="menu-icon tf-icons bx bx-collection"></i>
                         <div data-i18n="Basic">Orders</div>
                     </a>
                 </li>
@@ -125,7 +106,7 @@
                 <!-- Extended components -->
                 <li class="menu-item">
                     <a href="{{ url('/Contact') }}" class="menu-link">
-                        <i class='menu-icon tf-icons bx bxs-contact' ></i>
+                        <i class="menu-icon tf-icons bx bx-collection"></i>
                         <div data-i18n="Basic">Contact</div>
                     </a>
                 </li>
@@ -134,23 +115,20 @@
                 <!-- Extended components -->
                 <li class="menu-item">
                     <a href="{{ url('/Settings') }}" class="menu-link">
-                        <i class='menu-icon tf-icons bx bx-cog'></i>
+                        <i class="menu-icon tf-icons bx bx-collection"></i>
                         <div data-i18n="Basic">Settings</div>
                     </a>
                 </li>
-
           </ul>
         </aside>
         <!-- / Menu -->
+
 
         <!-- Layout container -->
         <div class="layout-page">
           <!-- Navbar -->
 
-          <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-            id="layout-navbar"
-          >
+          <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"id="layout-navbar">
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
               <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
                 <i class="bx bx-menu bx-sm"></i>
@@ -162,12 +140,7 @@
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
                   <i class="bx bx-search fs-4 lh-0"></i>
-                  <input
-                    type="text"
-                    class="form-control border-0 shadow-none"
-                    placeholder="Search..."
-                    aria-label="Search..."
-                  />
+                  <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
                 </div>
               </div>
               <!-- /Search -->
@@ -175,22 +148,14 @@
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
                 <li class="nav-item lh-1 me-3">
-                  <a
-                  class="github-button"
-                  href="https://github.com/anasjabellah/k-appearance.git"
-                  data-icon="octicon-star"
-                  data-size="large"
-                  data-show-count="true"
-                  aria-label="Star anasjabellah/k-appearance.git on GitHub"
-                  >Star</a>
-                  
+                  <a class="github-button" href="https://github.com/anasjabellah/k-appearance.git" data-icon="octicon-star" data-size="large"  data-show-count="true" aria-label="Star anasjabellah/k-appearance.git on GitHub">Star</a>
                 </li>
 
                 <!-- User -->
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="{{ asset('backEnd/assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -199,7 +164,7 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="{{ asset('backEnd/assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -245,61 +210,28 @@
 
           <!-- / Navbar -->
 
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Form/</span> Add New Category</h4>
-
-              <!-- Basic Layout & Basic with Icons -->
-            <div class="row">
-                <!-- Basic Layout -->
-                <div class="col-xxl">
-                    <div class="card mb-4">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5 class="mb-0">Add Category</h5>
-                        </div>
-
-                        @if(session('status'))
-                          <div class="alert alert-success mb-1 mt-1">
-                              {{ session('status') }}
-                          </div>
-                        @endif
-
-                        <div class="card-body">
-                            <form action="{{ route('Category.store') }}" method="POST" enctype="multipart/form-data" >
-                              @csrf
-
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="basic-default-name" placeholder="Enter a name " name="name" />
-                                    </div>
-                                      @error('name')
-                                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                      @enderror
-                                </div>
-
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label mb-3" for="basic-default-company">Image</label>
-                                    <div class="col-sm-10">
-                                        <input class="form-control" type="file" id="formFile" name="image" />
-                                    </div> 
-                                      @error('image')
-                                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                                      @enderror
-                                </div> 
-
-                                <div class="row justify-content-end mb-4">
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Send</button>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                </div>
+           <!-- Basic Bootstrap Table -->
+           <div class="container-xxl flex-grow-1 container-p-y">
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Table /</span> Contact</h4>
+            <div class="card">
+              <h5 class="card-header"> Show Message </h5>
+              <div class=" text-nowrap">
+              <div class="card-content">
+            <div class="content p-5">
+                <p >Name : {{ $contact->name }}</p>
+                <p>Email: {{ $contact->email }}</p>
+                <p>Subject: {{ $contact->subject }}</p>
+                <p>Phone: {{ $contact->phone }}</p>
+                <p>Address: {{ $contact->address }}</p>
+                <p>Message: {{ $contact->message }}</p>
+                
+                <hr>
+                
             </div>
+            
 
 @endsection
+
+
+
+
